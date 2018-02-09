@@ -58,3 +58,35 @@ button.setAttribute('disabled', 'disabled');
 var profile = document.querySelectorAll('.bio-info-value');
 for (var i = 0; i < profile.length; i++) {
     profile[i].innerText = '';}
+
+
+PART 2 -----------------------------------
+
+0.
+var elem = document.querySelectorAll('.bar-default')[2];
+elem.parentNode.removeChild(elem);
+
+1.
+var pikachu = document.querySelector('#right-image img');
+var pikacopy = pikachu.cloneNode(true);
+var portfolio = document.querySelector('.portfolio-container');
+portfolio.appendChild(pikacopy);
+
+2.
+for (var i = 0; i < 10; i++){
+    var newPika = pikacopy.cloneNode(true);
+    portfolio.appendChild(newPika);}
+
+3.
+var listItem = document.createElement('li');
+var leftSpan = document.createElement('span');
+var lastUpdated = document.createTextNode('page last updated on');
+var bio = document.querySelector('.bio-info');
+bio.appendChild(listItem);
+var rightSpan = document.createElement('span');
+var updateDate = document.createTextNode(new Date())
+rightSpan.appendChild(updateDate);
+listItem.appendChild(rightSpan);
+listItem.setAttribute('class', 'bio-info-item');
+leftSpan.setAttribute('class', 'bio-info-title');
+rightSpan.setAttribute('class', 'bio-info-value bio-info-created');
